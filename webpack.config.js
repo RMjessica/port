@@ -7,12 +7,12 @@ module.exports = {
   entry: {
     bundle: path.resolve(__dirname, "src/index.js")
   },
+  devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js",
     clean: true
   },
-  devtool: "source-map",
   devServer: {
     static: {
       directory: path.resolve(__dirname, "dist")
@@ -38,26 +38,23 @@ module.exports = {
           }
         },
         {
-          test: /\.(css|scss)$/,
-          use: [
-            {
-              loader: "style-loader"
-            }, 
-            {
-              loader: "sass-loader"
-            },
-            {
-              loader:  "css-loader"
-            }
-          ]
-        },
+          test: /\.(s(a|c)ss)$/,
+          use: ['style-loader','css-loader', 'sass-loader']
+       },
       {
-        test: /\.(png|svg|jpg|gif|jpeg|webp)$/, use: {
+        test: /\.(png|svg|jpg|gif|jpeg|webp)$/, 
+        use: {
           loader: 'file-loader',
           options: { name: '[name].[ext]' }
         }
       },
+      { 
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, 
+        use: ['file-loader'] }
     ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
