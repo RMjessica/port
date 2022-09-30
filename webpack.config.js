@@ -1,18 +1,19 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const port = process.env.PORT || 3000;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/index.js")
+    bundle: path.resolve(__dirname, "src/front/js/")
   },
-  devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js",
     clean: true
   },
+  devtool: "source-map",
   devServer: {
     static: {
       directory: path.resolve(__dirname, "dist")
@@ -33,13 +34,21 @@ module.exports = {
           options: {
             presets: [
               "@babel/preset-env",
-              "@babel/preset-react"]
+              "@babel/preset-react",]
             }
           }
         },
         {
-          test: /\.(s(a|c)ss)$/,
-          use: ['style-loader','css-loader', 'sass-loader']
+          test: /\.(css|scss)$/,
+          use: [{
+            loader: "style-loader"
+        },
+        {
+            loader: "css-loader"
+        },
+        {
+            loader: "sass-loader"
+        }]
        },
       {
         test: /\.(png|svg|jpg|gif|jpeg|webp)$/, 
@@ -54,14 +63,17 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    // https://webpack.js.org/configuration/resolve/#resolveextensions
+    // extensions: ['.js', '.jsx', '...']
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Webpack App",
+      title: "Jessica RM",
+      favicon: "j.png",
       filename: "index.html",
       template: "src/template.html"
-    })
+    }),
   ]
 
 }
