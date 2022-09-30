@@ -1,11 +1,11 @@
 import React from 'react'
-import '../../styles/tech.css'
+/* import '../../styles/tech.css' */
 
 const Tech = () => {
   return (
     <div className='container visually-hidden'>
-      <h1 className='m-4 text-center'>Technologies</h1>
-      <div className='container text-center row row-cols-5'>
+      <h2 className='m-4'>Technologies</h2>
+      <div className='text-center row row-cols-5' style={{}}>
         <div>
           <i className='devicon-javascript-plain fs-2'></i>
           <p>Javascript</p>

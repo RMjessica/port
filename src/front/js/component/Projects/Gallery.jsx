@@ -12,8 +12,8 @@ export default class MultipleItems extends Component {
       slidesToScroll: 2
     };
     return (
-      <div className="container my-3">
-        <h2 className="mb-3">Projects</h2>
+      <div className="container my-3 visually-hidden">
+        <h2 className="mb-3 text-center">Projects</h2>
         <Slider {...settings}>
           <div className=''>
             <div className='card me-1'>
