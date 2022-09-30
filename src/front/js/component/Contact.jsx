@@ -5,12 +5,8 @@ import { WiStars } from "react-icons/wi";
 const Contact = () => {
   return (
     <div className='container'>
-      <div>
-        <h1 className='fw-light fst-italic my-3 fs-text-1'>Get in touch <WiStars className="text-warning"/></h1>
-        <p>OR find me in these spaces:</p>
-
-      </div>
-      
+      <h1 className='fw-light fst-italic my-3'>Get in touch <WiStars className="text-warning"/></h1>
+     
       <div className='card pt-4 px-4 pb-2 shadow mx-5 mt-4 text-center' id='transparency'>
         <div className="card-body">
         <div className='row mb-2'>
