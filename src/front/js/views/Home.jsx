@@ -2,7 +2,7 @@ import React from 'react'
 import Intro from '../component/Intro'
 import About from '../component/About'
 import Tech from '../component/Tech'
-import Gallery from '../component/Projects/Gallery'
+import Carousel from '../component/Projects/Carousel'
 import Contact from '../component/Contact'
 import '../../styles/home.css';
 
@@ -15,7 +15,7 @@ const Home = () => {
       <hr className='margin'></hr>
         <Tech />
       <hr className='margin'></hr>
-        <Gallery />
+        <Carousel />
       <hr className='margin'></hr>
         <Contact />
     </div>

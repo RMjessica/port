@@ -1,6 +1,7 @@
 #transparency {
   background: rgba(255, 255, 255, 0.249);
   border-radius: 16px;
+  border: none;
 }
 
 #shine:hover {

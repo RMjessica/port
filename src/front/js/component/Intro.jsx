@@ -8,7 +8,7 @@ const Intro = ({ text }) => {
     }
   );
 
-  useEffect(() => {
+/*   useEffect(() => {
     const timeout = setInterval(() => {
       if (fade.fade === 'fade-in') {
          setFade({
@@ -22,7 +22,7 @@ const Intro = ({ text }) => {
    }, 2000);
 
 return () => clearInterval(timeout)
-}, []);
+}, []); */
 
   return (
     <div className='visually-hidden'>
