@@ -13,7 +13,7 @@ const Tech = () => {
         <div className='card shadow p-4 fw-light' id='transparency'>
           <div className='text-center row row-cols-4'>
             {Object.keys(icons).map((key, i) => (
-              <p key={i}>
+              <p key={i}> 
                 <span>{key}</span>
                 <span>Value: {sampleJSON[key]}</span>
               </p>
